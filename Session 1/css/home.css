@@ -3,10 +3,14 @@
 * {
     margin: 0;
     padding: 0;
-  }
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
 a {
-    font-family: 'Roboto', sans-serif;
     text-decoration: none;
 }
 
@@ -25,14 +29,17 @@ nav {
 }
 
 .logo img {
-    width: 150px; /* Defina a largura desejada */
-    height: auto; /* Mantém a proporção da imagem */
+    width: 150px;
+    height: auto;
 }
 
 .navbar {
     display: flex;
     gap: 32px;
     list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .navbar a {
@@ -41,27 +48,30 @@ nav {
     padding-block: 16px;
 }
 
-
-/* Esconder o ícone do hambúrguer por padrão */
 .hamburger {
     display: none;
+  border: none;
+  background: none;
+  border-top: 3px solid #000000;
+  cursor: pointer;
 }
 
-/* Estilos para as barras do hambúrguer */
-.hamburger::before,
-.hamburger::after {
-    content: " ";
-    display: block;
-    width: 30px;
-    height: 3px;
-    background: #000000;
-    margin-top: 5px;
+.hamburger::after,
+.hamburger::before {
+  content: " ";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #000000;
+  margin-top: 5px;
+  position: relative;
+  transition: 0.3s;
 }
 
-/* Mostrar o ícone do hambúrguer apenas em telas pequenas */
 @media (max-width: 750px) {
     .hamburger {
         display: block;
+        z-index: 1;
     }
     .navbar {
         position: fixed;
@@ -70,30 +80,28 @@ nav {
         width: 100vw;
         height: 100vh;
         background: #a5c;
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-out;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        display: none;
     }
 }
 
-/* Estilo para a lista de menus */
-.menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.menu li {
+.navbar li {
     position: relative;
     margin-right: 20px;
 }
 
-.menu li a {
+.navbar li a {
     display: block;
     padding: 10px;
     transition: color 0.3s ease;
 }
 
-/* Linha que cresce embaixo da opção do menu */
-.menu li::after {
+.navbar li::after {
     content: "";
     position: absolute;
     left: 0;
@@ -104,11 +112,11 @@ nav {
     transition: width 0.3s ease;
 }
 
-.menu li:hover::after {
+.navbar li:hover::after {
     width: 100%;
 }
 
-.menu li a:hover {
+.navbar li a:hover {
     color: #fa4800;
 }
 
