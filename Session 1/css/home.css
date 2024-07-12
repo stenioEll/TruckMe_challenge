@@ -6,7 +6,9 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    overflow-x: hidden;
+    width: 100%;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -79,8 +81,7 @@ nav {
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: #a5c;
-        clip-path: circle(100px at 90% -15%);
+        background: white;
         transition: 1s ease-out;
         flex-direction: column;
         justify-content: space-around;
@@ -190,4 +191,366 @@ nav {
 .btn-outline:hover {
     background-color: #d63a00;
     border-color: #d63a00;
+}
+
+.btn-dark {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #171717;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 0.7em;
+}
+
+.btn-dark:hover {
+    background-color: #B31A1B;
+}
+
+.btn-outline-dark {
+    background-color: transparent;
+    border: 2px solid #B31A1B;
+}
+
+.btn-outline-dark:hover {
+    background-color:#B31A1B;
+    border-color: #B31A1B;
+}
+.container {
+    display: flex;
+    height: 80vh;
+    width: 100vw;
+}
+
+.left-side {
+    flex: 1;
+    background-color: #e01b1b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.right-side {
+    flex: 1;
+    background-color: #e01b1b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.left-text {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: justify;
+    max-width: 600px;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+
+}
+
+.left-text h1 {
+    margin: 0;
+    font-size: 2em;
+    white-space: nowrap;
+
+}
+.left-text h2 {
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: normal;
+    white-space: normal;
+}
+
+.left-text h1 {
+    margin: 0;
+    text-align: center;
+    text-align: left;
+}
+
+.left-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-text ul li {
+    margin: 20px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.left-text ul li::before {
+    content: "•";
+    color: red;
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1em;
+}
+.title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.subtitle h2 {
+    font-weight: 500;
+}
+
+.title-img {
+    width: auto;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.truck-img {
+    width: 700px;
+    height: auto;
+}
+
+.servicos {
+    padding: 40px 20px;
+    background-color:  white;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    height: 80vh;
+
+}
+.linha-vermelha {
+    width: 100px;
+    height: 4px;
+    background-color: red;
+    margin: 10px auto;
+}
+
+
+
+.card-table {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+.servicos-tabela {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.servicos-tabela th, .servicos-tabela td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.servicos-tabela th {
+    background-color:  #fa4800;
+    color: white;
+}
+
+.servicos-tabela td {
+    background-color: white;
+    color: #333;
+}
+
+.servicos-tabela tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.servicos-tabela tr:hover {
+    background-color: #ddd;
+}
+
+@media (max-width: 750px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+    .left-side {
+        padding:10px;
+        padding-right: 0;
+        margin-bottom: 20px;
+        width: 100%;
+        white-space: normal;
+        max-width: auto;
+    }
+    .left-side h2 {
+        font-size: 1em;
+        white-space: norma;
+    }
+    .right-side {
+        display: none;
+    }
+}
+
+.contact {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.right {
+    flex: 1;
+    background-color: #171717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    flex: 1;
+    background-color: #171717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn-black {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #e01b1b;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 0.7em;
+}
+
+.btn-black:hover {
+    background-color: #B31A1B;
+    color: white
+}
+
+.btn-outline-black {
+    background-color: transparent;
+    border: 1px solid #e01b1b;
+}
+
+.btn-outline-black:hover {
+    background-color: #B31A1B;
+    color: #white;
+    border: none
+}
+
+.card {
+    background-color: #212121;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid #B31A1B;
+
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: white;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3F3F3F;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #1D1D1D;
+    color: white;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #B31A1B;
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.btn-enviar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn-enviar a {
+    text-decoration: none;
+    color: white;
+}
+.btn-submit {
+    background-color: #e01b1b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #B31A1B;
+}
+
+.mail-img {
+    width: 400px;
+    height: 397px;
+    margin-left: 80px;
+}
+
+@media (max-width: 1000px) {
+    .contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left {
+        display: none;
+    }
+    .right {
+        width: 100%;
+    }
+    .card {
+        width: 100%;
+        margin: 0;
+    }
+
+    .mail-img {
+        display: none;
+    }
 }
