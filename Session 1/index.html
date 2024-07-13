@@ -109,31 +109,42 @@
         </div>
     </div>
     <div class="contact">
-        <div class="left">
-            <img src="assets/mail.png" alt="caminhao" class="mail-img">
-
+        <div class="contact-text">
+            <h1> Tem interesse Ou alguma dúvida? <br/>Entre em Contato!</h1>
+            <div class="linha-vermelha"></div>
         </div>
-        <div class="right">
-            <div class="card">
-                <form class="contact-form" id="contact-form">
-                    <h2>Entre em Contato</h2>
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name" required>
-                    <p id="name-error" style="font-size: 13px; color: #B31A1B; display: none; text-align: left;">Por favor, insira um nome válido.</p>
+        <div class="content-contact">
+            <div class="left">
+                <img src="assets/mail.png" alt="caminhao" class="mail-img">
+            </div>
+            <div class="right">
+                <div class="card">
+                    <form class="contact-form" id="contact-form">
+                        <h2>Entre em Contato</h2>
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                        <p id="name-error" style="font-size: 13px; color: #B31A1B; display: none; text-align: left;">Por favor, insira um nome válido.</p>
 
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                    <p id="email-error" style="font-size: 13px; color: #B31A1B; display: none; text-align: left;">Por favor, insira um email válido.</p>
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                        <p id="email-error" style="font-size: 13px; color: #B31A1B; display: none; text-align: left;">Por favor, insira um email válido.</p>
 
-                    <label for="message">Mensagem:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
 
-                    <p id="error-message" style="font-size: 13px; color: #B31A1B; display: none; text-align: center;">É necessário preencher todos os campos corretamente.</p>
-                </form>
-                <div class="btn-enviar">
-                    <button type="submit" class="btn-submit" id="submit-btn">
-                        Enviar<i class="fas fa-paper-plane" style="margin-left: 5px;"></i>
-                    </button>
+                        <p id="error-message" style="font-size: 13px; color: #B31A1B; display: none; text-align: center;">É necessário preencher todos os campos corretamente.</p>
+                    </form>
+                    <div class="btn-enviar">
+                        <button type="submit" class="btn-submit" id="submit-btn">
+                            Enviar<i class="fas fa-paper-plane" style="margin-left: 5px;"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="success-message" style="display: none; margin-top: 20px;">
+                    <h3>Mensagem Enviada</h3>
+                    <p id="success-name"></p>
+                    <p id="success-email"></p>
+                    <p id="success-message-content"></p>
                 </div>
             </div>
         </div>
@@ -178,12 +189,74 @@
                 }
 
                 if (isValid) {
-                    document.getElementById('contact-form').submit();
+                    document.getElementById('success-name').textContent = 'Nome: ' + name;
+                    document.getElementById('success-email').textContent = 'Email: ' + email;
+                    document.getElementById('success-message-content').textContent = 'Mensagem: ' + message;
+
+                    document.getElementById('success-message').style.display = 'block';
+
+                    alert('Mensagem enviada com sucesso!');
+
+                    document.getElementById('contact-form').reset();
                 }
             });
 
             </script>
     </div>
+    <div class="gallery">
+        <div class="gallery-text">
+            <h1> Galeria de Fotos</h1>
+            <div class="linha-preta"></div>
+        </div>
+        <div class="carousel">
+            <button class="carousel-button prev" id="prev-btn">Anterior</button>
+            <div class="carousel-images">
+                <div class="carousel-item">
+                    <img src="assets/caminhao1.jpg" alt="Imagem 1" class="carousel-image">
+                    <div class="carousel-caption">Oferecemos um serviço de frete rápido e seguro, conectando você aos melhores transportadores disponíveis</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/caminhao2.jpg" alt="Imagem 2" class="carousel-image">
+                    <div class="carousel-caption">Desde pequenas entregas até cargas pesadas, temos a rede de transportadores certa para você, com preços competitivos e sem complicações.</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/caminhao3.jpg" alt="Imagem 3" class="carousel-image">
+                    <div class="carousel-caption">Nosso aplicativo proporciona soluções de frete personalizadas para atender às suas necessidades específicas.</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/caminhao.png" alt="Imagem 4" class="carousel-image">
+                    <div class="carousel-caption">Simplifique o gerenciamento de seus fretes com nosso aplicativo intuitivo.</div>
+                </div>
+            </div>
+            <button class="carousel-button next" id="next-btn">Próximo</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var currentIndex = 0;
+        var images = document.querySelectorAll('.carousel-image');
+        var totalImages = images.length;
+
+        function updateCarousel() {
+            var offset = -currentIndex * 100;
+            document.querySelector('.carousel-images').style.transform = 'translateX(' + offset + '%)';
+        }
+
+        document.getElementById('prev-btn').addEventListener('click', function() {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalImages - 1;
+            updateCarousel();
+        });
+
+        document.getElementById('next-btn').addEventListener('click', function() {
+            currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
+
+        updateCarousel();
+    });
+
+    </script>
 
 </body>
 </html>
