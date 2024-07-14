@@ -5,20 +5,20 @@
         <h1>Bem-vindo ao Truck Me <br/></h1>
         <h2>Uma solução inteligente em frete</h2>
         <div class="buttons">
-          <a href="/Servicos" class="btn">Demonstração</a>
-          <a href="/Contato" class="btn btn-outline">Saiba Mais</a>
+          <a href="#contact" class="btn">Demonstração</a>
+          <a href="#about" class="btn btn-outline">Saiba Mais</a>
         </div>
       </div>
     </div>
-  </template>
+</template>
 
-  <script>
-  export default {
+<script>
+export default {
     name: 'BannerComponent'
-  }
-  </script>
+}
+</script>
 
-  <style scoped>
+<style scoped>
 .banner {
     width: 100vw;
     height: 100vh;
@@ -91,4 +91,4 @@
     border-color: #d63a00;
 }
 
-  </style>
+</style>

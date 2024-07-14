@@ -10,12 +10,8 @@
             Uma startup que oferece soluções inovadoras para conectar embarcadores e transportadores de maneira eficiente e transparente de forma 100% digital. Nosso objetivo é simplificar o processo de frete, garantindo qualidade e conformidade com todas as obrigações da transportadora tradicional.
           </h2>
           <div class="buttons">
-            <button class="btn-dark" @click="showContent = !showContent">
-              Demonstração
-            </button>
-            <button class="btn-dark btn-outline-dark" @click="toggleContent">
-              Leia Mais
-            </button>
+            <button class="btn-dark"  @click="scrollToSection('contact')">Demonstração</button>
+            <button class="btn-dark btn-outline-dark" @click="toggleContent">Leia Mais</button>
           </div>
           <div id="conteudo" :class="{'conteudo-oculto': !showContent, 'conteudo-visivel': showContent}">
             <ul>
@@ -34,7 +30,7 @@
     </div>
   </template>
 
-  <script setup>
+<script setup>
   import { ref } from 'vue';
 
   const showContent = ref(false);
@@ -42,9 +38,16 @@
   const toggleContent = () => {
     showContent.value = !showContent.value;
   }
-  </script>
 
-  <style scoped>
+  const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+</script>
+
+<style scoped>
   .btn-dark {
     display: inline-block;
     padding: 10px 20px;
@@ -52,52 +55,52 @@
     background-color: #171717;
     color: #FFFFFF;
     text-decoration: none;
-    border:none;
+    border: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
     font-size: 0.9em;
-    cursor:pointer;
-}
+    cursor: pointer;
+  }
 
-.btn-dark:hover {
+  .btn-dark:hover {
     background-color: #B31A1B;
-}
+  }
 
-.btn-outline-dark {
+  .btn-outline-dark {
     margin-left: 10px;
     background-color: transparent;
     border: 2px solid #B31A1B;
-}
+  }
 
-.btn-outline-dark:hover {
-    background-color:#B31A1B;
+  .btn-outline-dark:hover {
+    background-color: #B31A1B;
     border-color: #B31A1B;
-}
-.container {
+  }
+
+  .container {
     display: flex;
     height: 100vh;
     width: 100vw;
-}
+  }
 
-.left-side {
+  .left-side {
     flex: 1;
     background-color: #e01b1b;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-
-.right-side {
+  .right-side {
     flex: 1;
     background-color: #e01b1b;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-}
+  }
 
-.left-text {
+  .left-text {
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -107,40 +110,34 @@
     margin: auto;
     font-family: 'Roboto', sans-serif;
     color: white;
+  }
 
-}
-
-.left-text h1 {
+  .left-text h1 {
     margin: 0;
     font-size: 2em;
     white-space: nowrap;
+    text-align: left;
+  }
 
-}
-.left-text h2 {
+  .left-text h2 {
     margin-top: 10px;
     font-size: 1em;
     font-weight: normal;
     white-space: normal;
-}
+  }
 
-.left-text h1 {
-    margin: 0;
-    text-align: center;
-    text-align: left;
-}
-
-.left-text ul {
+  .left-text ul {
     list-style: none;
     padding: 0;
-}
+  }
 
-.left-text ul li {
+  .left-text ul li {
     margin: 20px 0;
     padding-left: 20px;
     position: relative;
-}
+  }
 
-.left-text ul li::before {
+  .left-text ul li::before {
     content: "•";
     color: black;
     font-size: 1.5em;
@@ -148,24 +145,75 @@
     left: 0;
     top: 0;
     line-height: 1em;
-}
-.title {
+  }
+
+  .title {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-.subtitle h2 {
-    font-weight: 500;
-}
+  }
 
-.title-img {
+  .subtitle h2 {
+    font-weight: 500;
+  }
+
+  .title-img {
     width: auto;
     height: 80px;
     margin-right: 10px;
-}
+  }
 
-.truck-img {
+  .truck-img {
     width: 700px;
     height: auto;
-}
-  </style>
+  }
+
+  .conteudo-oculto {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .conteudo-visivel {
+    max-height: 500px;
+    transition: max-height 0.5s ease;
+  }
+
+  @media (max-width: 750px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .left-side {
+      flex: none;
+      width: 100%;
+    }
+
+    .right-side {
+      display: none;
+    }
+
+    .left-text {
+      padding: 10px;
+      max-width: 100%;
+      margin: 0;
+    }
+
+    .left-text h1 {
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    .left-text h2 {
+      font-size: 0.9em;
+      text-align: center;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+</style>
