@@ -87,16 +87,15 @@ nav {
         width: 100vw;
         height: 100vh;
         background: white;
-        transition: transform 0.3s ease;
-        transform: translateX(-100%);
+        transition: 1s ease-out;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         gap: 0;
-        display: flex;
+        display: none;
     }
     .navbar.show {
-        transform: translateX(0);
+        display: flex;
     }
 }
 
