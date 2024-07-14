@@ -13,30 +13,55 @@
             <a href="/" class="logo">
                 <img src="assets/logo_truck_me.png" alt="logo Truck Me">
             </a>
-            <button class="hamburger"></button>
+            <button class="hamburger" aria-label="Toggle menu"></button>
             <ul class="navbar">
-                <li><a href="#">Home</a></li>
-                <li><a href="/Sobre">Sobre</a></li>
-                <li><a href="/Servicos">Servicos</a></li>
-                <li><a href="/Contrato">Contato</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#service">Serviços</a></li>
+                <li><a href="#contact">Contato</a></li>
             </ul>
         </nav>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const hamburger = document.querySelector('.hamburger');
+                const navbar = document.querySelector('.navbar');
+                const navbarLinks = document.querySelectorAll('.navbar a');
+
+                function toggleMenu() {
+                    navbar.classList.toggle('show');
+                    overlay.classList.toggle('show');
+                }
+
+                hamburger.addEventListener('click', toggleMenu);
+
+                overlay.addEventListener('click', function() {
+                    toggleMenu();
+                });
+
+                // Fechar o menu ao clicar em um link
+                navbarLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        toggleMenu();
+                    });
+                });
+            });
+        </script>
     </header>
     <div>
-        <div class="banner">
+        <div class="banner" id="home">
             <img src="assets/banner.jpg" alt="banner">
             <div class="texto-boas-vindas">
                 <h1>Bem-vindo ao Truck Me <br/> </h1>
                 <h2>Uma solução inteligente em frete</h2>
                 <div class="buttons">
-                    <a href="/Servicos" class="btn">Demonstração</a>
-                    <a href="/Contato" class="btn btn-outline">Saiba Mais</a>
+                    <a href="#contact" class="btn">Demonstração</a>
+                    <a href="#about" class="btn btn-outline">Saiba Mais</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="container">
-        <div class="left-side">
+        <div class="left-side" id="about">
             <div class="left-text">
                 <div class="title">
                     <img src="assets/logo.png" alt="caminhao" class="title-img">
@@ -44,7 +69,7 @@
                 </div>
                 <h2 class="subtitle">Uma startup que oferece soluções inovadoras para conectar embarcadores e transportadores de maneira eficiente e transparente de forma 100% digital. Nosso objetivo é simplificar o processo de frete, garantindo qualidade e conformidade com todas as obrigações da transportadora tradicional.</h2>
                 <div class="buttons">
-                    <button class="btn-dark">Demonstração</button>
+                    <a href="#contato" class="btn-dark">Demonstração</a>
                     <button class="btn-dark btn-outline-dark" id="leia-mais">Leia Mais</button>
                 </div>
                 <div id="conteudo" class="conteudo-oculto">
@@ -74,7 +99,7 @@
             <img src="assets/caminhao.png" alt="caminhao" class="truck-img">
         </div>
     </div>
-    <div class="servicos">
+    <div class="servicos" id="service">
         <div>
             <h1> Nossos Serviços</h1>
             <div class="linha-vermelha"></div>
@@ -108,9 +133,9 @@
             </table>
         </div>
     </div>
-    <div class="contact">
+    <div class="contact" id="contact">
         <div class="contact-text">
-            <h1> Tem interesse Ou alguma dúvida? <br/>Entre em Contato!</h1>
+            <h1>Tem interesse Ou alguma dúvida? <br/>Entre em Contato!</h1>
             <div class="linha-vermelha"></div>
         </div>
         <div class="content-contact">
@@ -133,17 +158,18 @@
                         <textarea id="message" name="message" rows="4" required></textarea>
 
                         <p id="error-message" style="font-size: 13px; color: #B31A1B; display: none; text-align: center;">É necessário preencher todos os campos corretamente.</p>
+
+                        <div class="btn-enviar">
+                            <button type="submit" class="btn-submit" id="submit-btn">
+                                Enviar<i class="fas fa-paper-plane" style="margin-left: 5px;"></i>
+                            </button>
+                        </div>
                     </form>
-                    <div class="btn-enviar">
-                        <button type="submit" class="btn-submit" id="submit-btn">
-                            Enviar<i class="fas fa-paper-plane" style="margin-left: 5px;"></i>
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
         <script>
-            document.getElementById('submit-btn').addEventListener('click', function(event) {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
 
                 var name = document.getElementById('name').value.trim();
@@ -161,41 +187,27 @@
                 emailError.style.display = 'none';
                 errorMessage.style.display = 'none';
 
-                if (name === '' && email === '' && message === '') {
+                if (name.length < 2) {
+                    nameError.style.display = 'block';
+                    isValid = false;
+                }
+
+                if (!email.match(emailPattern)) {
+                    emailError.style.display = 'block';
+                    isValid = false;
+                }
+
+                if (name === '' || email === '' || message === '') {
                     errorMessage.style.display = 'block';
                     isValid = false;
-                } else {
-                    if (name.length < 2) {
-                        nameError.style.display = 'block';
-                        isValid = false;
-                    }
-
-                    if (!email.match(emailPattern)) {
-                        emailError.style.display = 'block';
-                        isValid = false;
-                    }
-
-
-                    if (name === '' || email === '' || message === '') {
-                        errorMessage.style.display = 'block';
-                        isValid = false;
-                    }
                 }
 
                 if (isValid) {
-                    document.getElementById('success-name').textContent = 'Nome: ' + name;
-                    document.getElementById('success-email').textContent = 'Email: ' + email;
-                    document.getElementById('success-message-content').textContent = 'Mensagem: ' + message;
-
-                    document.getElementById('success-message').style.display = 'block';
-
                     alert('Mensagem enviada com sucesso!');
-
                     document.getElementById('contact-form').reset();
                 }
             });
-
-            </script>
+        </script>
     </div>
     <div class="gallery">
         <div class="gallery-text">
