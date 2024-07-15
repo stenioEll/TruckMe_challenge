@@ -10,22 +10,20 @@ import GalleryComponent from './components/GalleryComponent.vue'
 </script>
 
 <template>
-  <HeaderComponent/>
+  <HeaderComponent />
   <section id="home">
-    <BannerComponent/>
+    <BannerComponent />
   </section>
   <section id="about">
-    <AboutComponent/>
+    <AboutComponent />
   </section>
   <section id="services">
-    <ServicesTablesComponent/>
+    <ServicesTablesComponent />
   </section>
   <section id="contact">
-    <ContactFormComponent/>
+    <ContactFormComponent />
   </section>
-  <GalleryComponent/>
+  <GalleryComponent />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

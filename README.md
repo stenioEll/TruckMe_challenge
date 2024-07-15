@@ -1,7 +1,41 @@
 # TruckMe_challenge
 TruckMe - Vue.js Project
 ## Sobre ##
-Este projeto é um site desenvolvido em Vue.js para a empresa TruckMe de gerenciamento de fretes 100% digital, o site é composto por vários componentes, incluindo um cabeçalho, banner, seção "Sobre", tabela de serviços, formulário de contato e galeria de imagens. Este README documenta as decisões de design e implementações que foram feitas durante o desenvolvimento.
+Este projeto é um site desenvolvido em Vue.js para a empresa TruckMe de gerenciamento de fretes 100% digital, o site é composto por vários componentes, incluindo um cabeçalho, banner, seção "Sobre", tabela de serviços, formulário de contato e galeria de imagens. Este README documenta as decisões de design e implementações que foram feitas durante o desenvolvimento e como executar.
+
+_Confira abaixo as tecnologias utilizadas no projeto:_
+
+- [Node.js](https://nodejs.org/en/)
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [Vue JS](https://vuejs.org/)
+- [Cypress](https://www.cypress.io/)
+- [Eslint] ([https://www.cypress.io/](https://eslint.org/))
+- [Prettier] (https://prettier.io/)
+
+## :checkered_flag: Para inicializar o projeto no seu computador ##
+
+# Clone o projeto
+$ git clone https://github.com/stenioEll/TruckMe_challenge.git
+
+# Acesse
+$ cd Truck-me
+
+# Instale as dependências
+$ yarn
+
+# Ou npm install
+
+## :checkered_flag: executar testes unitários do projeto no seu computador ##
+- Os testes foram feitos utilizando Cypress, estão localizados na pasta tests/units,  os componentes escolhidos foram HeaderComponent e AboutComponent, no primeiro componente foi feito para verificar se a logo e os elementos de navegação são exibidos corretamente no cabeçalho, também um teste foi feito para verificar se o menu hamburguer estava funcionando corretamente.
+- No segundo foi feito testes para verificar se o título e o subtítulo são exibidos corretamente no componente, ademias testar a funcionalidade de abrir e fechar o conteúdo adicional ao clicar no botão "Leia Mais".
+
+# Executar testes unitários
+$ npm run test:unit
+
+## Análise de qualidade de código
+
+-Utilizei o prettier integrado com Eslint para fazer melhoria na qualidade do código.
+$  npx prettier . --write
 
 # Decisões de Design
 1. Estrutura do Projeto: O projeto foi dividido em componentes Vue.js para facilitar a manutenção e a escalabilidade, seus componentes principais incluem:
@@ -56,3 +90,11 @@ Este projeto é um site desenvolvido em Vue.js para a empresa TruckMe de gerenci
 # 7. GalleryComponent
 
 - Na galeria de fotos fiz o slide com bordas suavemente arredondadas para não ficar totalmente quadrado, adicionei 4 imagens testes, criei os botões com fundo preto transpararente e escolhi também criar uma camada na parte inferior, transparente com tom de vermelho, com texto branco descrevendo alguns serviços da TruckMe, a idéia que futuramente ali descreva feedbacks de clientes que usam o serviço da empresa.
+
+## 👽 Autor ##
+
+Feito com :heart: por Stênio Ellison
+
+&#xa0;
+
+

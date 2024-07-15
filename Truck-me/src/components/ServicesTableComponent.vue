@@ -17,17 +17,26 @@
           <tbody>
             <tr>
               <td>Sem Burocracia</td>
-              <td>Cuidamos de toda a burocracia, permitindo que você foque no que realmente importa: transportar.</td>
+              <td>
+                Cuidamos de toda a burocracia, permitindo que você foque no que
+                realmente importa: transportar.
+              </td>
               <td>R$ 500,00</td>
             </tr>
             <tr>
               <td>Gerenciamento de Carga</td>
-              <td>Simplificamos o gerenciamento de fretes, assegurando que suas cargas estejam nas melhores mãos.</td>
+              <td>
+                Simplificamos o gerenciamento de fretes, assegurando que suas
+                cargas estejam nas melhores mãos.
+              </td>
               <td>R$ 1000,00</td>
             </tr>
             <tr>
               <td>Ofertas</td>
-              <td>Receba as melhores ofertas de cargas de maneira direta, sem intermediação, comissionamento ou taxas adicionais.</td>
+              <td>
+                Receba as melhores ofertas de cargas de maneira direta, sem
+                intermediação, comissionamento ou taxas adicionais.
+              </td>
               <td>R$ 300,00</td>
             </tr>
           </tbody>
@@ -46,7 +55,7 @@ export default {
 <style scoped>
 .servicos {
   padding: 40px 20px;
-  background-color:  white;
+  background-color: white;
   text-align: center;
   align-items: center;
   display: flex;
@@ -85,7 +94,8 @@ export default {
   border-collapse: collapse;
 }
 
-.servicos-tabela th, .servicos-tabela td {
+.servicos-tabela th,
+.servicos-tabela td {
   border: 1px solid #ddd;
   padding: 15px;
   text-align: center;
@@ -93,7 +103,7 @@ export default {
 }
 
 .servicos-tabela th {
-  background-color:  #fa4800;
+  background-color: #fa4800;
   color: white;
 }
 
@@ -112,11 +122,11 @@ export default {
 
 @media (max-width: 750px) {
   .servicos {
-      height: auto;
+    height: auto;
   }
 
   .table-wrapper {
-      max-height: 300px;
+    max-height: 300px;
   }
 }
 </style>
