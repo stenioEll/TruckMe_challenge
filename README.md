@@ -9,7 +9,7 @@ _Confira abaixo as tecnologias utilizadas no projeto:_
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [Vue JS](https://vuejs.org/)
 - [Cypress](https://www.cypress.io/)
-- [Eslint](https://eslint.org/))
+- [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 
 ## :checkered_flag: Para inicializar o projeto no seu computador ##
@@ -25,9 +25,9 @@ $ yarn
 
 # Ou npm install
 
-## :checkered_flag: executar testes unitários do projeto no seu computador ##
+## :checkered_flag: Executar testes unitários do projeto no seu computador ##
 - Os testes foram feitos utilizando Cypress, estão localizados na pasta tests/units,  os componentes escolhidos foram HeaderComponent e AboutComponent, no primeiro componente foi feito para verificar se a logo e os elementos de navegação são exibidos corretamente no cabeçalho, também um teste foi feito para verificar se o menu hamburguer estava funcionando corretamente.
-- No segundo foi feito testes para verificar se o título e o subtítulo são exibidos corretamente no componente, ademias testar a funcionalidade de abrir e fechar o conteúdo adicional ao clicar no botão "Leia Mais".
+- No segundo foram aplicados testes para verificar se o título e o subtítulo são exibidos corretamente no componente, ademais testar a funcionalidade de abrir e fechar o conteúdo adicional ao clicar no botão "Leia Mais".
 
 # Executar testes unitários
 $ npm run test:unit
@@ -59,19 +59,19 @@ $  npx prettier . --write
 
 - No banner optei por colocar uma imagem diferente do site oficial e adicionei uma camada de sobreposição com um overlay com cor preta e opacidade de 0.5 para escurecer a imagem de fundo e destacar o texto.
 
-- O texto de Boas-vindas foi posicionado de forma absoluta para ficar centralizado sobre a imagem de fundo e utilizei z-index para ficar acima da sobreposição da imagem, a cor branca para um contraste claro com a imagem de fundo e uma variação do branco no texto embaixo para dar a impressão de título principal e o assunto embaixo.
+- O texto de Boas-vindas foi posicionado de forma absoluta para ficar centralizado sobre a imagem de fundo e utilizei z-index para ficar acima da sobreposição da imagem, a cor branca para um contraste claro com a imagem de fundo e uma variação do branco no texto embaixo para dar a impressão de título principal e o assunto abaixo.
 
-- Apesar de não solicitado no BannerComponent, no site antigo observei que havia um botão e decidi replicá-lo da minha maneira e com um botão saiba mais também para ter mais conteúdo no banner. O botão principal que buscamos que e chame mais atenção do usuário é o de 'demonstração' por isso a decisão de ser um botão com cor cheia(solid buttons) enquanto o 'saiba mais' decidi que fosse um botão do tipo outliner, os quais são menos chamativos, mas ainda são claramente identificáveis como botões, feito de forma mais minimalista.
+- Apesar de não solicitado no BannerComponent, no site antigo observei que havia um botão e decidi replicá-lo da minha maneira e com um botão saiba mais também para ter mais conteúdo no banner. O botão principal que buscamos que chame mais atenção do usuário é o de 'demonstração' por isso a decisão de ser um botão com cor cheia (solid buttons) enquanto o 'saiba mais' decidi que fosse um botão do tipo outliner, os quais são menos chamativos, mas ainda são claramente identificáveis como botões, feito de forma mais minimalista.
 
 - Esse novos botões podem lhe levar diretamente para a parte de contato para agendar a demonstração ou para seção sobre, para entender mais o que a TruckMe faz.
 
 # 4. AboutComponent
 
-- No layout e estrutura, dividi em duas colunas onde o lado esquerdo contém as informações textuais e botões de chamada para ação e o direito Exibe uma imagem reaproveitada do site da empresa. O Design responsivo, permitiu que em telas menores o lado direito não aparecesse, também empilha as seções verticalmente, usando display flex porém com flex-direction em column, garantindo uma experiência de usuário contínua em dispositivos móveis.
+- No layout e estrutura, dividi em duas colunas onde o lado esquerdo contém as informações textuais e botões de chamada para ação e o direito Exibe uma imagem reaproveitada do site da empresa. O Design responsivo permitiu que em telas menores o lado direito não aparecesse, também permitiu empilhar as seções verticalmente, usando display flex porém com flex-direction em column, garantindo uma experiência de usuário contínua em dispositivos móveis.
 
 - No título do lado esquerdo adicionei uma parte da logo da empresa para reforçar a marca.
 
-- Dois estilos de botões são usados para criar uma distinção visual, e um foi solicitado pelo desafio, o do "Saiba mais", o Botão Sólido ("Demonstração") Utiliza um fundo sólido escuro para atrair atenção e encorajar a interação do usuário e o contornado("Leia Mais"): Utiliza um fundo transparente com uma borda vermelha para fornecer uma ação secundária que é visualmente conectada, mas menos dominante, similar ao que foi feito no BannerComponent, com efeitos de hover também e o cursor pointer ativo para o usuário perceber que é clicável.
+- Dois estilos de botões são usados para criar uma distinção visual, e um foi solicitado pelo desafio, o do "Saiba mais", o Botão Sólido ("Demonstração") Utiliza um fundo sólido escuro para atrair atenção e encorajar a interação do usuário e o contornado ("Leia Mais"): Utiliza um fundo transparente com uma borda vermelha para fornecer uma ação secundária que é visualmente conectada, mas menos dominante, similar ao que foi feito no BannerComponent, com efeitos de hover também e o cursor pointer ativo para o usuário perceber que é clicável.
 
 - O botão "Leia Mais" revela informações adicionais sobre os serviços da empresa quando clicado. O conteúdo é oculto inicialmente e se torna visível após a interação, mantendo a interface limpa e focada. Após uma transição suave o conteúdo expande a lista com uma transição suave para proporcionar uma experiência de usuário sem interrupções, isso foi feito usando Javascript combinado com Vue JS.
 
@@ -81,7 +81,7 @@ $  npx prettier . --write
 
 # 6. ContactFormComponent
 
-- Seu layout foi dividido ao meio como aboutcomponent, onde lado esquerdo ficou uma imagem e no direito o formulário, optei por fazer um formulário em um card com cor parecida com a do fundo, para dar a impressão de 'glassmorphism', adicionei borda arredondada de cor vermelha ao redor, coloquei os inputs e labels um abaixo do outro pois eram poucos campos e pensei na validação, finalizei com botão de enviar, no lado direito a imagem de email em tablet foi escolhida para fazer alusão ao envio de mensagem com tons vermelhos.
+- Seu layout foi dividido ao meio como aboutcomponent, onde no lado esquerdo ficou uma imagem e no direito o formulário, optei por fazer um formulário em um card com cor parecida com a do fundo, para dar a impressão de 'glassmorphism', adicionei borda arredondada de cor vermelha ao redor, coloquei os inputs e labels um abaixo do outro pois eram poucos campos e pensei na validação, finalizei com botão de enviar, no lado direito a imagem de email em tablet foi escolhida para fazer alusão ao envio de mensagem com tons vermelhos.
 
 - Validei os campos do formulário, onde nome tem que ter no mínimo dois caracteres se não aparece uma mensagem de erro abaixo, email usa uma expressão regular para validar o formato do e-mail. Se o e-mail não corresponder ao padrão, exibe uma mensagem de erro e mensagem que verifica se todos os campos obrigatórios (nome, e-mail e mensagem) estão preenchidos, exibe uma mensagem de erro se algum campo estiver vazio.
 
