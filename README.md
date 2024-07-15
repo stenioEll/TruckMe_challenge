@@ -9,8 +9,8 @@ _Confira abaixo as tecnologias utilizadas no projeto:_
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [Vue JS](https://vuejs.org/)
 - [Cypress](https://www.cypress.io/)
-- [Eslint] ([https://www.cypress.io/](https://eslint.org/))
-- [Prettier] (https://prettier.io/)
+- [Eslint]((https://eslint.org/))
+- [Prettier](https://prettier.io/)
 
 ## :checkered_flag: Para inicializar o projeto no seu computador ##
 
